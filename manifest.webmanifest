@@ -1,0 +1,21 @@
+
+{
+  "id": "/",
+  "name": "VisaFlow AI",
+  "short_name": "VisaFlow",
+  "description": "Visa client and appointment tracking",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#10233f",
+  "background_color": "#f3f6fb",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

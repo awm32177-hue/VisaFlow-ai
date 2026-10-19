@@ -381,7 +381,7 @@ function resetClientForm() {
 }
 
 function editClient(id) {
-  const c = clients.find(item => item.id === id);
+    const c = clients.find(item => String(item.id) === String(id));
   if (!c) return;
 
   $("clientId").value = c.id;
@@ -501,7 +501,9 @@ $("clientList").addEventListener("click", async event => {
   }
 
   if (deleteButton) {
-    const c = clients.find(item => item.id === deleteButton.dataset.delete);
+    const c = clients.find(
+  item => String(item.id) === String(deleteButton.dataset.delete)
+);
     if (!c || !confirm(`Delete client "${c.applicant_name}"?`)) return;
 
     const { error } = await db.from("visa_clients")
@@ -517,7 +519,9 @@ $("clientList").addEventListener("click", async event => {
 });
 
 $("draftButton").addEventListener("click", () => {
-  const c = clients.find(item => item.id === $("draftClient").value);
+  const c = clients.find(
+  item => String(item.id) === String($("draftClient").value)
+);
   if (!c) {
     alert("Add or select a client first.");
     return;
